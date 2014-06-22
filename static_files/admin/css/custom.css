@@ -1,0 +1,2 @@
+.datetimeshortcuts a:first-child {display:none;}
+.datetimeshortcuts a:last-child {margin-left:-10px;}

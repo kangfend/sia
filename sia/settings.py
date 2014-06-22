@@ -23,8 +23,12 @@ else:
     ADMIN_MEDIA_PREFIX = 'http://cdn.' + HOSTNAME + '/sia/static/admin/'
     # SITE_ID = 2
 
+STATIC_ROOT = (
+    os.path.join(BASE_DIR, 'static')
+)
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'sia/static/'),
+    os.path.join(BASE_DIR, 'static_files'),
 )
 
 TEMPLATE_DIRS = (

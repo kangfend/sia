@@ -3,7 +3,12 @@ from django.contrib import admin
 from .models import *
 
 
-class GuruAdmin(admin.ModelAdmin):
+class IncludeCustomCSS(admin.ModelAdmin):
+    class Media:
+        css = {'all': ('admin/css/custom.css', )}
+
+
+class GuruAdmin(IncludeCustomCSS):
     list_display = ['nik', 'nama', 'aktif']
 
     fieldsets = [
@@ -24,7 +29,7 @@ class GuruAdmin(admin.ModelAdmin):
     suit_form_tabs = (('guru', 'Guru'),)
 
 
-class SiswaAdmin(admin.ModelAdmin):
+class SiswaAdmin(IncludeCustomCSS):
     list_display = ['nis', 'nama', 'kelas', 'aktif']
 
     fieldsets = [
